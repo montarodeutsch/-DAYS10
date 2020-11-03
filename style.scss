@@ -1,0 +1,210 @@
+$base-color: #3F51B5;
+$white: #FFFFFF;
+$red: #E81919;
+$black: #333333;
+$card-background: #efefef;
+
+$breakpoints: (
+  'sm': 'screen and (max-width: 414px)',
+  'md': 'screen and (max-width: 768px)',
+  'lg': 'screen and (max-width: 1000px)',
+  'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+@mixin mq($breakpoint: md) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+// 共通
+
+body {
+  font-family: "游ゴシック体", "Yu Gothic", "yugothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "meiryo", "MS Pゴシック", "MS PGothic", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $white;
+  display: inline-block;
+
+  &:hover {
+    color: $white;
+    opacity: 0.7;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.clear::after {
+  content:"";
+  clear: both;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background-color: $base-color;
+  border-radius: 12px;
+  padding: 25px 90px;
+  font-size: 32px;
+  font-weight: bold;
+  color: $white;
+
+  @include mq(md) {
+    padding: 20px 60px;
+  }
+
+  @include mq() {
+    padding: 18px 38px;
+    font-size: 24px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+    color: $white;
+  }
+}
+
+section {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 100px;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    height: 2px;
+    background: $base-color;
+}
+
+
+// header
+
+header {
+  background-color: $base-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.header-left {
+  float: left;
+}
+
+.header-logo {
+  height: 40px;
+  width: auto;
+  margin: 30px 0;
+
+  @include mq() {//画面サイズが414pxまでの場合、styleを適用
+    margin: 10px 0;
+  }
+}
+
+.header-right {
+  float: right;
+
+  @include mq() {
+    display: none;
+  }
+}
+
+.header-right li a {
+  position: relative;
+
+  &.is-active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+    width: 100%;
+    height: 2px;
+    background: $red;
+  }
+}
+
+.nav-item {
+  float: left;
+  line-height: 100px;
+  margin-left: 40px;
+}
+
+// top-wrapper
+
+.top-wrapper {
+  background-image: url("../img/30day-trial-desk.jpg");
+  background-size: cover;
+  height: 700px;
+ 
+  @include mq(md) {//画面サイズが768pxまでの場合、styleを適用
+    height: 900px;
+  }
+  
+  @include mq() {//画面サイズが414pxまでの場合、styleを適用
+    height: 600px;
+  }
+}
+
+.top-message {
+  text-align: center;
+  padding-top: 184px;
+  margin-bottom: 32px;
+  font-size: 64px;
+  color: $white;
+  font-weight: bold;
+
+  @include mq(md) {
+    padding-top: 250px;
+    font-size: 48px;
+  }
+
+  @include mq() {
+    padding-top: 150px;
+    font-size: 38px;
+    margin-bottom: 28px;
+  }
+}
+
+.sub-message {
+  text-align: center;
+  color: $white;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-contact {
+  text-align: center;
+}
+
+// card-wrapper
+
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  width: calc(33.33333333% - 24px * 2 / 3); 
+  margin-right: 16px;
+  margin-top: 24px;
+
+  &:nth-child(3n) {
+  margin-right: 0;
+  }
+}

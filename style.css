@@ -1,0 +1,201 @@
+@charset "UTF-8";
+body {
+  font-family: "游ゴシック体", "Yu Gothic", yugothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", meiryo, "MS Pゴシック", "MS PGothic", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+  display: inline-block;
+}
+
+a:hover {
+  color: #FFFFFF;
+  opacity: 0.7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.clear::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #3F51B5;
+  border-radius: 12px;
+  padding: 25px 90px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 20px 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .btn {
+    padding: 18px 38px;
+    font-size: 24px;
+  }
+}
+
+.btn:hover {
+  opacity: 0.7;
+  cursor: pointer;
+  color: #FFFFFF;
+}
+
+section {
+  padding: 100px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  height: 2px;
+  background: #3F51B5;
+}
+
+.section-title header {
+  background-color: #3F51B5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.section-title .header-left {
+  float: left;
+}
+
+.section-title .header-logo {
+  height: 40px;
+  width: auto;
+  margin: 30px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .section-title .header-logo {
+    margin: 10px 0;
+  }
+}
+
+.section-title .header-right {
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  .section-title .header-right {
+    display: none;
+  }
+}
+
+.section-title .header-right li a {
+  position: relative;
+}
+
+.section-title .header-right li a.is-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+  width: 100%;
+  height: 2px;
+  background: #E81919;
+}
+
+.section-title .nav-item {
+  float: left;
+  line-height: 100px;
+  margin-left: 40px;
+}
+
+.section-title .top-wrapper {
+  background-image: url("../img/30day-trial-desk.jpg");
+  background-size: cover;
+  height: 700px;
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    height: 900px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-title {
+    height: 600px;
+  }
+}
+
+.top-message {
+  text-align: center;
+  padding-top: 184px;
+  margin-bottom: 32px;
+  font-size: 64px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+  .top-message {
+    padding-top: 250px;
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .top-message {
+    padding-top: 150px;
+    font-size: 38px;
+    margin-bottom: 28px;
+  }
+}
+
+.sub-message {
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn-contact {
+  text-align: center;
+}
+
+.card_items {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card_item {
+  width: calc(33.33333333% - 24px * 2 / 3);
+  margin-right: 16px;
+  margin-top: 24px;
+}
+
+.card__item:nth-child(3n) {
+  margin-right: 0;
+}
